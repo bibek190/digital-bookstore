@@ -4,7 +4,7 @@ import bannerImg from "../../assets/banner.png";
 const Banner = () => {
   return (
     <div className="flex flex-col md:flex-row-reverse py-16 px-3 justify-between items-center gap-4">
-      <div className=" w-full flex items-center md:justify-end">
+      <div className=" w-1/2 flex items-center md:justify-end">
         <img src={bannerImg} alt="banner" />
       </div>
       <div>
