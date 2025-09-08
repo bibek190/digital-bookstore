@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 const BookCard = ({ book }) => {
   console.log("bookcard", book);
   return (
-    <div className="flex rounded-lg transition-shadow duration-300">
-      <div className="flex flex-col sm:flex-row sm:items-center sm:h-72  sm:justify-center gap-4">
-        <div className="sm:h-72 sm:flex-shrink-0 border rounded-md">
+    <div className="flex rounded-lg transition-shadow duration-300 text-sm">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:h-72  sm:justify-center gap-3">
+        <div className="sm:h-50 sm:flex-shrink-0 border rounded-md">
           <Link to={`/books/${book._id}`}>
             <img
               src={`${getImgUrl(book.coverImage)}`}
@@ -20,7 +20,7 @@ const BookCard = ({ book }) => {
 
         <div>
           <Link to={`/books/${book._id}`}>
-            <h3 className="text-xl font-semibold hover:text-blue-600 mb-3">
+            <h3 className="text-lg font-semibold hover:text-blue-600 mb-3">
               {book.title}
             </h3>
           </Link>
@@ -35,9 +35,9 @@ const BookCard = ({ book }) => {
               {book?.oldPrice}
             </span>
           </p>
-          <button className="btn-primary px-6 space-x-1 flex items-center gap-1 ">
+          <button className="btn-primary px-4 py-1 flex items-center text-sm ">
             <FiShoppingCart className="" />
-            <span>Add to Cart</span>
+            <span>AddtoCart</span>
           </button>
         </div>
       </div>
