@@ -6,6 +6,7 @@ import { FaRegUser } from "react-icons/fa6";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { HiShoppingCart } from "react-icons/hi";
 import avatarImg from "../assets/avatar.png";
+import { useSelector } from "react-redux";
 
 const navigation = [
   { name: "Dashboard", href: "/dashboard" },
@@ -16,8 +17,9 @@ const navigation = [
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  console.log(isDropdownOpen);
-  const currentUser = true;
+  const cart = useSelector((state) => state.cart.cartItems);
+
+  const currentUser = false;
   return (
     <header className="max-w-6xl mx-auto px-4 py-5">
       <nav className="flex justify-between items-center">
@@ -84,7 +86,13 @@ const Navbar = () => {
           </button>
           <Link className="bg-[#ffce1a] p-1 sm:px-6  px-2 flex items-center">
             <HiShoppingCart />
-            <span className="text-sm font-semibold sm:ml-1">0</span>
+            {cart.length > 0 ? (
+              <span className="text-sm font-semibold sm:ml-1">
+                {cart.length}
+              </span>
+            ) : (
+              <span className="text-sm font-semibold sm:ml-1">0</span>
+            )}
           </Link>
         </div>
       </nav>
